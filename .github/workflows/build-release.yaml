@@ -39,6 +39,11 @@ jobs:
           fi
           echo "RELEASE_VERSION=$TAG" >> $GITHUB_ENV
 
+      - name: Setup Node.js v20
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          
       - name: Install modules, transpile service and build service
         working-directory: standalone/service
         run: |
